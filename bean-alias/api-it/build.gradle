@@ -1,0 +1,4 @@
+dependencies {
+    compile project(':bean-alias')
+    testCompile project(':integration-testing')
+}

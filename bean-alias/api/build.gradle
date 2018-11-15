@@ -1,0 +1,6 @@
+enablePublishing()
+
+dependencies {
+    compile "org.springframework:spring-context:${springVersion}"
+    compile 'org.slf4j:slf4j-api:1.7.25'
+}

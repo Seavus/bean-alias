@@ -1,0 +1,45 @@
+apply plugin: 'java'
+
+ext {
+    springVersion = '5.0.7.RELEASE'
+    springBootVersion = '2.0.3.RELEASE'
+
+    GROUP = 'com.seavus.beanalias'
+    VERSION_NAME = "1.0"
+    POM_DESCRIPTION = "Bean Alias"
+
+    POM_URL = "http://github.com/seavus/bean-alias"
+    POM_SCM_URL = "http://github.com/seavus/bean-alias"
+    POM_SCM_CONNECTION = "scm:git:https://github.com/seavus/bean-alias.git"
+    POM_SCM_DEV_CONNECTION = "scm:git:git@github.com:seavus/bean-alias.git"
+
+    POM_LICENCE_NAME = "MIT License"
+    POM_LICENCE_URL = "https://opensource.org/licenses/MIT"
+    POM_LICENCE_DIST = "repo"
+
+    POM_DEVELOPER_ID = "seavus"
+    POM_DEVELOPER_NAME = "Seavus"
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "http://repo.maven.apache.org/maven2" }
+    }
+}
+
+subprojects {
+    ext.enablePublishing = {
+        apply from: rootDir.toURI().resolve('gradle/publish.gradle')
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    ext.springVersion = rootProject.ext.springVersion
+    ext.springBootVersion = rootProject.ext.springBootVersion
+}

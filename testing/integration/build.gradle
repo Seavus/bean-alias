@@ -1,0 +1,5 @@
+dependencies {
+    compile project(':unit-testing')
+    compile "org.springframework:spring-tx:${springVersion}"
+    compile "org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}"
+}

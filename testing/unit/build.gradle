@@ -1,0 +1,6 @@
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}") {
+        exclude(module: 'commons-logging')
+    }
+    compile 'org.assertj:assertj-core:3.3.0'
+}

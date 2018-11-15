@@ -1,0 +1,12 @@
+rootProject.name = 'bean-alias'
+rootProject.buildFileName = 'bean-alias.gradle'
+
+include ':bean-alias'
+project(':bean-alias').projectDir = file('bean-alias/api')
+include ':bean-alias-it'
+project(':bean-alias-it').projectDir = file('bean-alias/api-it')
+
+include ':unit-testing'
+project(':unit-testing').projectDir = file('testing/unit')
+include ':integration-testing'
+project(':integration-testing').projectDir = file('testing/integration')
